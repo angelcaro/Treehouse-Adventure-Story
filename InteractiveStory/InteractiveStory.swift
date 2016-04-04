@@ -63,7 +63,7 @@ class Page {
     typealias Choice = (title: String, page: Page)
     
     var firstChoice: Choice?
-    var secondchoice: Choice?
+    var secondChoice: Choice?
     
     init(story: Story) {
         self.story = story
@@ -82,13 +82,13 @@ extension Page {
     
     func addChoice(title: String, page: Page) -> Page {
         
-        switch(firstChoice, secondchoice) {
+        switch(firstChoice, secondChoice) {
         case (.Some, .Some):
             break
         case (.None, .None), (.None, .Some):
             firstChoice = (title, page)
         case (.Some, .None):
-            secondchoice = (title, page)
+            secondChoice = (title, page)
         
             
         }
